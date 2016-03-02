@@ -1,125 +1,179 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix kpi:	 <http://w3id.org/kpionto/>.
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix kpic:	 <http://w3id.org/kpionto/category/>.
-@prefix kpip:	 <http://w3id.org/kpionto/property/>.
+
+kpi:   rdf:type owl:Ontology ;
+      dc:created "2016/03/01 12:00:00";
+      dc:date "2016/03/01 13:00:00";
+      dc:description """
+        The KPIOnto provides main concepts and properties 
+	for describing (Key) Performance Indicators
+        on the Semantic Web. 
+    """ ;
+      dc:title "KPIOnto" ;
+      owl:versionInfo "Revision: 1.0.0" ;
+      foaf:maker 
+        [ foaf:name "Emanuele Storti"; foaf:homepage <http://www.dii.univpm.it/emanuele.storti> ],
+        [ foaf:name "Domenico Potena"],
+	[ foaf:name "Claudia Diamantini"].
+
 
 ###########################################
 # Classes
 ###########################################
 
-kpic:KpiElement
+kpi:KpiElement
       a       owl:Class.
 
-kpic:BusinessObjectives
+kpi:BusinessObjectives
       a       owl:Class ;
-      rdfs:subClassOf kpic:KpiElement .
+      rdfs:subClassOf kpi:KpiElement .
 
-kpic:AggregationFunction
+kpi:AggregationFunction
       a       owl:Class ;
-      rdfs:subClassOf kpic:KpiElement .
+      rdfs:subClassOf kpi:KpiElement .
 
-kpic:Formula
+kpi:Formula
       a       owl:Class ;
-      rdfs:subClassOf kpic:KpiElement .
-kpic:TestFormula
-      a       owl:Class ;
-      rdfs:subClassOf kpic:Formula .
+      rdfs:subClassOf kpi:KpiElement .
 
-kpic:Indicator
+kpi:FormulaArgument
       a       owl:Class ;
-      rdfs:subClassOf kpic:KpiElement .
+      rdfs:subClassOf kpi:KpiElement .
 
-kpic:Dimension
+kpi:Constant
       a       owl:Class ;
-      rdfs:subClassOf kpic:KpiElement .
+      rdfs:subClassOf kpi:KpiElement;
+      owl:equivalentClass [owl:unionOf (xsd:nonNegativeInteger xsd:float)].
 
-kpic:Level
+kpi:ArgumentValue
+      a       owl:Class ;
+      rdfs:subClassOf kpi:KpiElement;
+      owl:equivalentClass [owl:unionOf (kpi:Constant kpi:Indicator kpi:Formula)].
+
+kpi:Indicator
+      a       owl:Class ;
+      rdfs:subClassOf kpi:KpiElement .
+
+kpi:Dimension
+      a       owl:Class ;
+      rdfs:subClassOf kpi:KpiElement .
+
+kpi:Level
       a	      owl:Class;
-      rdfs:subClassOf kpic:KpiElement .
+      rdfs:subClassOf kpi:KpiElement .
 
-kpic:Member
+kpi:Member
       a	      owl:Class;
-      rdfs:subClassOf kpic:KpiElement .
+      rdfs:subClassOf kpi:KpiElement .
 
 ###########################################
 # Data properties
 ###########################################
 
-kpip:Acronym
+kpi:Acronym
       a       owl:DatatypeProperty ;
-      rdfs:domain kpic:Indicator ;
+      rdfs:domain kpi:Indicator ;
       rdfs:range xsd:string .
 
-kpip:AggrType
+kpi:AggrType
       a       owl:DatatypeProperty ;
-      rdfs:domain kpic:AggregationFunction ;
+      rdfs:domain kpi:AggregationFunction ;
       rdfs:range xsd:string ;
-      kpip:Allows_value
+      kpi:Allows_value
               "Holistic" , "Algebraic" , "Distributive" , "None" .
 
-kpip:UnitOfMeasure
+kpi:UnitOfMeasure
       a       owl:DatatypeProperty ;
-      rdfs:domain kpic:Indicator ;
+      rdfs:domain kpi:Indicator ;
       rdfs:range xsd:string .
 
-kpip:IsAdditive
+kpi:IsAdditive
       a       owl:DatatypeProperty ;
-      rdfs:domain kpic:Formula ;
+      rdfs:domain kpi:Formula ;
       rdfs:range xsd:string ;
-      kpip:Allows_value
+      kpi:Allows_value
               "yes" , "no" .
 
-kpip:KPIDescription
+kpi:KPIDescription
       a       owl:DatatypeProperty ;
-      rdfs:domain kpic:Indicator ;
+      rdfs:domain kpi:Indicator ;
       rdfs:range xsd:string .
+
+kpi:argumentPosition
+      a       owl:DatatypeProperty ;
+      rdfs:domain kpi:FormulaArgument ;
+      rdfs:range xsd:nonNegativeInteger .
+
+kpi:argumentName
+      a       owl:DatatypeProperty ;
+      rdfs:domain kpi:FormulaArgument ;
+      rdfs:range xsd:NCName .
+
 
 ###########################################
 # Object properties
 ###########################################
 
-kpip:HasAggregationFunction
+kpi:HasAggregationFunction
       a       owl:ObjectProperty ;
-      rdfs:domain kpic:Indicator ;
-      rdfs:range kpic:AggregationFunction .
+      rdfs:domain kpi:Indicator ;
+      rdfs:range kpi:AggregationFunction .
 
-kpip:HasFormula
+kpi:HasFormula
       a       owl:ObjectProperty ;
-      rdfs:domain kpic:Indicator ;
-      rdfs:range kpic:Formula ;
-      owl:inverseOf kpip:IsFormulaFor ;
+      rdfs:domain kpi:Indicator ;
+      rdfs:range kpi:Formula ;
+      owl:inverseOf kpi:IsFormulaFor ;
       owl:maxCardinality "1.0" ;
       owl:minCardinality "1.0" .
 
-kpip:IsFormulaFor
+kpi:IsFormulaFor
       a       owl:ObjectProperty ;
-      rdfs:domain kpic:Formula ;
-      rdfs:range kpic:Indicator ;
-      owl:inverseOf kpip:HasFormula .
+      rdfs:domain kpi:Formula ;
+      rdfs:range kpi:Indicator ;
+      owl:inverseOf kpi:HasFormula .
 
-kpip:Rollup
+kpi:Rollup
       a       owl:ObjectProperty.
 
-kpip:HasBusObj
+kpi:HasBusObj
       a       owl:ObjectProperty ;
-      rdfs:domain kpic:Indicator ;
-      rdfs:range kpic:BusinessObjectives ;
+      rdfs:domain kpi:Indicator ;
+      rdfs:range kpi:BusinessObjectives ;
       owl:maxCardinality "1.0" ;
       owl:minCardinality "1.0" .
 
-kpip:HasDimension
+kpi:HasDimension
       a       owl:ObjectProperty ;
-      rdfs:domain kpic:Indicator ;
-      rdfs:range kpic:Dimension .
+      rdfs:domain kpi:Indicator ;
+      rdfs:range kpi:Dimension .
 
-kpip:inLevel
+kpi:inLevel
       a       owl:ObjectProperty ;
-      rdfs:domain kpic:Member ;
-      rdfs:range kpic:Level .
+      rdfs:domain kpi:Member ;
+      rdfs:range kpi:Level .
 
-kpip:inDimension
+kpi:inDimension
       a       owl:ObjectProperty ;
-      rdfs:domain kpic:Level ;
-      rdfs:range kpic:Dimension .
+      rdfs:domain kpi:Level ;
+      rdfs:range kpi:Dimension .
+
+kpi:function
+      a       owl:ObjectProperty ;
+      rdfs:domain kpi:Formula ;
+      rdfs:range xsd:anyURI .
+
+kpi:argument
+      a       owl:ObjectProperty ;
+      rdfs:domain kpi:Formula ;
+      rdfs:range kpi:FormulaArgument .
+
+kpi:argumentValue
+      a       owl:ObjectProperty ;
+      rdfs:domain kpi:FormulaArgument ;
+      rdfs:range kpi:ArgumentValue .
