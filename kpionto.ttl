@@ -104,12 +104,12 @@ kpi:KPIDescription
       rdfs:domain kpi:Indicator ;
       rdfs:range xsd:string .
 
-kpi:argumentPosition
+kpi:hasArgumentPosition
       a       owl:DatatypeProperty ;
       rdfs:domain kpi:FormulaArgument ;
       rdfs:range xsd:nonNegativeInteger .
 
-kpi:argumentName
+kpi:hasArgumentName
       a       owl:DatatypeProperty ;
       rdfs:domain kpi:FormulaArgument ;
       rdfs:range xsd:NCName .
@@ -163,17 +163,17 @@ kpi:inDimension
       rdfs:domain kpi:Level ;
       rdfs:range kpi:Dimension .
 
-kpi:function
+kpi:hasFunction
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Formula ;
       rdfs:range xsd:anyURI .
 
-kpi:argument
+kpi:hasArgument
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Formula ;
       rdfs:range kpi:FormulaArgument .
 
-kpi:argumentValue
+kpi:hasArgumentValue
       a       owl:ObjectProperty ;
       rdfs:domain kpi:FormulaArgument ;
       rdfs:range kpi:ArgumentValue .
