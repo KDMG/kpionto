@@ -1,0 +1,78 @@
+#####################################
+# eurostat.ttl
+
+# This document includes a simple example showing how to represent mathematical formulas related to indicators.
+# The example refers to Eurostat datasets about pollutants per country and year, namely:
+#   - emissions of sulphur oxides, or SOx (tsdpc260)
+#   - emissions of nitrogen oxides, or NOx (tsdpc270)
+#   - emissions of non-methan volatile organic compound (tsdpc280)
+#   - emissions of ammonia, or NH3 (tsdpc290)
+#
+# and the dataset about total population per country and year (tps00001).
+# Two compound indicators are defined, namely TotalPollutants (given by the summation of the four pollutants), 
+# and TotalPollutantsPerCapita (TotalPollutants divided by TotalPopulation).
+
+
+# Authors:
+# Claudia Diamantini (Università Politecnica delle Marche) c.diamantini@univpm.it
+# Domenico Potena (Università Politecnica delle Marche) d.potena@univpm.it
+# Emanuele Storti (Università Politecnica delle Marche) e.storti@univpm.it
+
+#####################################
+@prefix :         <http://example.org/>.
+@prefix kpi:      <http://w3id.org/kpionto/>.
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix om:       <http://www.openmath.org/cd/>.
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+
+# Definition of indicators and formulas
+
+:SOXEmission
+        a kpi:Indicator.
+
+:NOxEmission
+        a kpi:Indicator.
+
+:Non-methanVolatileOrgEmission
+        a kpi:Indicator.
+
+:NH3Emission
+        a kpi:Indicator.
+
+:TotalPopulation
+        a kpi:Indicator.
+        
+:TotalEmissions
+        a kpi:Indicator;
+        kpi:hasFormula [
+          kpi:hasFunction om:arith1/plus;
+          kpi:hasArgument
+              [ kpi:hasArgumentPosition "1"xsd:int ;
+                kpi:hasArgumentName "addend" ;
+                kpi:hasArgumentValue :SOXEmission ],
+              [ kpi:hasArgumentPosition "2"xsd:int ;
+                kpi:hasArgumentName "addend" ;
+                kpi:hasArgumentValue :NOXEmission ],
+              [ kpi:hasArgumentPosition "3"xsd:int ;
+                kpi:hasArgumentName "addend" ;
+                kpi:hasArgumentValue :Non-methanVolatileOrgEmission ],
+              [ kpi:hasArgumentPosition "4"xsd:int ;
+                kpi:hasArgumentName "addend" ;
+                kpi:hasArgumentValue :NH3Emission ]
+        ].
+
+:TotalEmissionsPerCapita
+        a kpi:Indicator;
+        kpi:hasFormula [
+          kpi:hasFunction om:arith1/divide;
+          kpi:hasArgument
+              [ kpi:hasArgumentPosition "1"xsd:int ;
+                kpi:hasArgumentName "dividend" ;
+                kpi:hasArgumentValue :TotalEmissions ],
+              [ kpi:hasArgumentPosition "2"xsd:int ;
+                kpi:hasArgumentName "divisor" ;
+                kpi:hasArgumentValue :TotalPopulation ]
+        ].
