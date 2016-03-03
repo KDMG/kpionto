@@ -2,15 +2,15 @@
 # eurostat.ttl
 
 # This document includes a simple example showing how to represent mathematical formulas related to indicators.
-# The example refers to Eurostat datasets about pollutants per country and year, namely:
+# The example refers to Eurostat datasets about emissions per country and year, namely:
 #   - emissions of sulphur oxides, or SOx (tsdpc260)
 #   - emissions of nitrogen oxides, or NOx (tsdpc270)
 #   - emissions of non-methan volatile organic compound (tsdpc280)
 #   - emissions of ammonia, or NH3 (tsdpc290)
 #
 # and the dataset about total population per country and year (tps00001).
-# Two compound indicators are defined, namely TotalPollutants (given by the summation of the four pollutants), 
-# and TotalPollutantsPerCapita (TotalPollutants divided by TotalPopulation).
+# Two compound indicators are defined, namely TotalEmissions (given by the summation of the four emissions), 
+# and TotalEmissionsPerCapita (TotalEmissions divided by TotalPopulation).
 
 
 # Authors:
