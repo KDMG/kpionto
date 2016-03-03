@@ -3,10 +3,8 @@ KPIOnto: an ontology to describe (Key) Performance Indicators
 
 
 
-File "kpionto.ttl" includes the N3 serialization of the KPIOnto ontology.
-
-
-The "example" folder includes usage examples of the ontology. 
+* File "kpionto.ttl" includes the N3 serialization of the KPIOnto ontology.
+* The "example" folder includes usage examples of the ontology. 
 
 How to cite
 -----------
