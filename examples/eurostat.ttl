@@ -7,7 +7,7 @@
 #   - emissions of nitrogen oxides, or NOx (tsdpc270)
 #   - emissions of non-methan volatile organic compound (tsdpc280)
 #   - emissions of ammonia, or NH3 (tsdpc290)
-#
+
 # and the dataset about total population per country and year (tps00001).
 # Two compound indicators are defined, namely TotalEmissions (given by the summation of the four emissions), 
 # and TotalEmissionsPerCapita (TotalEmissions divided by TotalPopulation).
