@@ -3,7 +3,8 @@ KPIOnto: an ontology to describe (Key) Performance Indicators
 
 
 
-The kpionto.ttl includes the N3 serialization of both the TBox of the ontology and the ABox used for the BIVEE project.
+File "kpionto.ttl" includes the N3 serialization of the KPIOnto ontology.
+The "example" folder includes usage examples of the ontology. 
 
 How to cite
 -----------
