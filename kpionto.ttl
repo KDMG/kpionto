@@ -55,7 +55,7 @@ kpi:FormulaArgument
 kpi:Constant
       a       owl:Class ;
       rdfs:isDefinedBy kpi: ;
-      owl:equivalentClass [owl:unionOf (xsd:nonNegativeInteger xsd:float)] ;
+      owl:equivalentClass [a owl:Class; owl:unionOf (xsd:nonNegativeInteger xsd:float)] ;
       rdfs:comment "A constant, either a non-negative integer or a float." ;
       rdfs:label "Constant" .
 
@@ -93,14 +93,6 @@ kpi:Member
 ###########################################
 # Data properties
 ###########################################
-
-kpi:duration a owl:DatatypeProperty ;
-  owl:FunctionalProperty ;
-  rdfs:label "duration"@en ;
-  rdfs:comment "The duration of the object"@en ;
-  rdfs:range [
-    owl:unionOf ( xsd:duration xsd:nonNegativeInteger )
-  ].
 
 kpi:acronym
       a       owl:DatatypeProperty ;
