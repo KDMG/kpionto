@@ -27,153 +27,231 @@ kpi:   rdf:type owl:Ontology ;
 ###########################################
 
 kpi:KpiElement
-      a       owl:Class.
+      a       owl:Class ;
+      rdfs:label "KpiElement" .
 
 kpi:BusinessObjectives
       a       owl:Class ;
-      rdfs:subClassOf kpi:KpiElement .
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "A business objective." ;
+      rdfs:label "BusinessObjectives" .
 
 kpi:AggregationFunction
       a       owl:Class ;
-      rdfs:subClassOf kpi:KpiElement .
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "An aggregation function." ;
+      rdfs:label "AggregationFunction" .
+
+kpi:AggregationType
+      a       owl:Class ;
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "The type of an aggregator." ;
+      rdfs:label "AggregationType" .
 
 kpi:Formula
       a       owl:Class ;
-      rdfs:subClassOf kpi:KpiElement .
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "A formula for an indicator." ;
+      rdfs:label "Formula" .
 
 kpi:FormulaArgument
       a       owl:Class ;
-      rdfs:subClassOf kpi:KpiElement .
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "An argument for a formula." ;
+      rdfs:label "FormulaArgument" .
 
 kpi:Constant
       a       owl:Class ;
-      rdfs:subClassOf kpi:KpiElement;
-      owl:equivalentClass [owl:unionOf (xsd:nonNegativeInteger xsd:float)].
+      rdfs:subClassOf kpi:KpiElement ;
+      owl:equivalentClass [owl:unionOf (xsd:nonNegativeInteger xsd:float)] ;
+      rdfs:comment "A constant, either a non-negative integer or a float." ;
+      rdfs:label "Constant" .
 
 kpi:ArgumentValue
       a       owl:Class ;
-      rdfs:subClassOf kpi:KpiElement;
-      owl:equivalentClass [owl:unionOf (kpi:Constant kpi:Indicator kpi:Formula)].
+      rdfs:subClassOf kpi:KpiElement ;
+      owl:equivalentClass [owl:unionOf (kpi:Constant kpi:Indicator kpi:Formula)] ;
+      rdfs:comment "The value for an argument, i.e. either a constant, an indicator or a formula." ;
+      rdfs:label "Formula" .
 
 kpi:Indicator
       a       owl:Class ;
-      rdfs:subClassOf kpi:KpiElement .
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "A metric to quantitatively measure a phenomenon." ;
+      rdfs:label "Indicator" .
 
 kpi:Dimension
       a       owl:Class ;
-      rdfs:subClassOf kpi:KpiElement .
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "A dimension for the analysis of an indicator." ;
+      rdfs:label "Dimension" .
 
 kpi:Level
       a	      owl:Class;
-      rdfs:subClassOf kpi:KpiElement .
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "A level belonging to the hierarchy for a dimension." ;
+      rdfs:label "Level" .
 
 kpi:Member
       a	      owl:Class;
-      rdfs:subClassOf kpi:KpiElement .
+      rdfs:subClassOf kpi:KpiElement ;
+      rdfs:comment "A member belonging to a level." ;
+      rdfs:label "Member" .
 
 ###########################################
 # Data properties
 ###########################################
 
-kpi:Acronym
+kpi:acronym
       a       owl:DatatypeProperty ;
       rdfs:domain kpi:Indicator ;
-      rdfs:range xsd:string .
-
-kpi:AggrType
-      a       owl:DatatypeProperty ;
-      rdfs:domain kpi:AggregationFunction ;
       rdfs:range xsd:string ;
-      kpi:Allows_value
-              "Holistic" , "Algebraic" , "Distributive" , "None" .
+      rdfs:comment "Indicates the acronym for a formula." ;
+      rdfs:label "acronym" .
 
-kpi:UnitOfMeasure
+kpi:unitOfMeasure
       a       owl:DatatypeProperty ;
       rdfs:domain kpi:Indicator ;
-      rdfs:range xsd:string .
+      rdfs:range xsd:string ;
+      rdfs:comment "Indicates the unit of measurement for an indicator." ;
+      rdfs:label "unitOfMeasure".
 
-kpi:IsAdditive
+kpi:isAdditive
       a       owl:DatatypeProperty ;
       rdfs:domain kpi:Formula ;
-      rdfs:range xsd:string ;
-      kpi:Allows_value
-              "yes" , "no" .
+      rdfs:range xsd:boolean ;
+      rdfs:comment "Indicates whether a formula is additive or not." ;
+      rdfs:label "isAdditive".
 
 kpi:KPIDescription
       a       owl:DatatypeProperty ;
       rdfs:domain kpi:Indicator ;
-      rdfs:range xsd:string .
+      rdfs:range xsd:string ;
+      rdfs:comment "Describes an indicator." ;
+      rdfs:label "KPIDescription".
 
 kpi:hasArgumentPosition
       a       owl:DatatypeProperty ;
       rdfs:domain kpi:FormulaArgument ;
-      rdfs:range xsd:nonNegativeInteger .
+      rdfs:range xsd:nonNegativeInteger ;
+      rdfs:comment "Indicates the position for an argument in a formula." ;
+      rdfs:label "hasArgumentPosition".
 
 kpi:hasArgumentName
       a       owl:DatatypeProperty ;
       rdfs:domain kpi:FormulaArgument ;
-      rdfs:range xsd:NCName .
+      rdfs:range xsd:NCName ;
+      rdfs:comment "Indicates the name for a formula argument." ;
+      rdfs:label "hasArgumentName".
 
+kpi:hasFunction
+      a       owl:DataProperty ;
+      rdfs:domain kpi:Formula ;
+      rdfs:range xsd:anyURI ;
+      rdfs:comment "Indicates the mathematical operator for a formula." ;
+      rdfs:label "hasFunction".
 
 ###########################################
 # Object properties
 ###########################################
 
-kpi:HasAggregationFunction
+kpi:aggrType
+      a       owl:ObjectProperty ;
+      rdfs:domain kpi:AggregationFunction ;
+      rdfs:range xsd:AggregationType ;
+      rdfs:comment "Indicates the type of an aggregation function." ;
+      rdfs:label "aggrType".
+      
+kpi:hasAggregationFunction
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Indicator ;
-      rdfs:range kpi:AggregationFunction .
+      rdfs:range kpi:AggregationFunction ;
+      rdfs:comment "Indicates the aggregation function for an indicator." ;
+      rdfs:label "hasAggregationFunction".
 
-kpi:HasFormula
+kpi:hasFormula
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Indicator ;
       rdfs:range kpi:Formula ;
-      owl:inverseOf kpi:IsFormulaFor ;
+      owl:inverseOf kpi:isFormulaFor ;
       owl:maxCardinality "1.0" ;
-      owl:minCardinality "1.0" .
+      owl:minCardinality "1.0" ;
+      rdfs:comment "Indicates the formula for an indicator." ;
+      rdfs:label "hasFormula".
 
-kpi:IsFormulaFor
+kpi:isFormulaFor
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Formula ;
       rdfs:range kpi:Indicator ;
-      owl:inverseOf kpi:HasFormula .
+      owl:inverseOf kpi:hasFormula ;
+      rdfs:comment "Indicates the indicator which the formula is defined for." ;
+      rdfs:label "isFormulaFor".
 
-kpi:Rollup
-      a       owl:ObjectProperty.
+kpi:rollup
+      a       owl:ObjectProperty ;
+      rdfs:comment "Indicates the parthood relation between two levels or two members." ;
+      rdfs:label "Rollup".
 
-kpi:HasBusObj
+kpi:hasBusObj
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Indicator ;
       rdfs:range kpi:BusinessObjectives ;
       owl:maxCardinality "1.0" ;
-      owl:minCardinality "1.0" .
+      owl:minCardinality "1.0" ;
+      rdfs:comment "Indicates the business objective for an indicator." ;
+      rdfs:label "hasBusObj".
 
-kpi:HasDimension
+kpi:hasDimension
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Indicator ;
-      rdfs:range kpi:Dimension .
+      rdfs:range kpi:Dimension ;
+      rdfs:comment "Indicates a dimension that is compatible for an indicator." ;
+      rdfs:label "hasDimension".
 
 kpi:inLevel
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Member ;
-      rdfs:range kpi:Level .
+      rdfs:range kpi:Level ;
+      rdfs:comment "Indicates that a member belongs to a level." ;
+      rdfs:label "inLevel".
 
 kpi:inDimension
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Level ;
-      rdfs:range kpi:Dimension .
-
-kpi:hasFunction
-      a       owl:ObjectProperty ;
-      rdfs:domain kpi:Formula ;
-      rdfs:range xsd:anyURI .
+      rdfs:range kpi:Dimension ;
+      rdfs:comment "Indicates that a level belongs to a dimension." ;
+      rdfs:label "inDimension".
 
 kpi:hasArgument
       a       owl:ObjectProperty ;
       rdfs:domain kpi:Formula ;
-      rdfs:range kpi:FormulaArgument .
+      rdfs:range kpi:FormulaArgument ;
+      rdfs:comment "Indicates an argument for a formula." ;
+      rdfs:label "hasArgument".
 
 kpi:hasArgumentValue
       a       owl:ObjectProperty ;
       rdfs:domain kpi:FormulaArgument ;
-      rdfs:range kpi:ArgumentValue .
+      rdfs:range kpi:ArgumentValue ;
+      rdfs:comment "Indicates the value for an argument." ;
+      rdfs:label "hasArgumentValue".
+      
+###########################################
+# Individuals
+###########################################
+
+kpi:Distributive
+      a       kpi:AggregationType ;
+      rdfs:label "Distributive".
+      
+kpi:Algebraic
+      a       kpi:AggregationType ;
+      rdfs:label "Algebraic".
+
+kpi:Holistic
+      a       kpi:AggregationType ;
+      rdfs:label "Holistic".
+
+kpi:None
+      a       kpi:AggregationType ;
+      rdfs:label "None".
