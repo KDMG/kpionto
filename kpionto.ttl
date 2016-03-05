@@ -12,7 +12,7 @@ kpi:   rdf:type owl:Ontology ;
       dc:description "The KPIOnto provides main concepts and properties for describing (Key) Performance Indicators on the Semantic Web." ;
       dc:title "KPIOnto" ;
       owl:versionInfo "Revision: 1.0.0" ;
-      foaf:maker 
+      dc:creator 
         [ foaf:name "Emanuele Storti"; foaf:homepage <http://www.dii.univpm.it/emanuele.storti> ],
         [ foaf:name "Domenico Potena"],
 	[ foaf:name "Claudia Diamantini"].
