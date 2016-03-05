@@ -236,18 +236,54 @@ kpi:hasArgumentValue
 # Individuals
 ###########################################
 
-kpi:Distributive
-      a       kpi:AggregationType ;
-      rdfs:label "Distributive".
+kpi:sum
+      a       kpi:AggregationFunction ;
+      kpi:aggrType kpi:distributive ;      
+      rdfs:label "sum" .
+
+kpi:count
+      a       kpi:AggregationFunction ;
+      kpi:aggrType kpi:distributive ;      
+      rdfs:label "count" .
+
+kpi:min
+      a       kpi:AggregationFunction ;
+      kpi:aggrType kpi:distributive ;      
+      rdfs:label "min" .
       
-kpi:Algebraic
-      a       kpi:AggregationType ;
-      rdfs:label "Algebraic".
+kpi:max
+      a       kpi:AggregationFunction ;
+      kpi:aggrType kpi:distributive ;
+      rdfs:label "max" .
 
-kpi:Holistic
-      a       kpi:AggregationType ;
-      rdfs:label "Holistic".
 
-kpi:None
+kpi:avg
+      a       kpi:AggregationFunction ;
+      kpi:aggrType kpi:algebraic ;      
+      rdfs:label "avg" .
+      
+kpi:median
+      a       kpi:AggregationFunction ;
+      kpi:aggrType kpi:holistic ;      
+      rdfs:label "median" .
+
+kpi:mode
+      a       kpi:AggregationFunction ;
+      kpi:aggrType kpi:holistic ;      
+      rdfs:label "mode" .
+
+kpi:distributive
       a       kpi:AggregationType ;
-      rdfs:label "None".
+      rdfs:label "distributive" .
+      
+kpi:algebraic
+      a       kpi:AggregationType ;
+      rdfs:label "algebraic" .
+
+kpi:holistic
+      a       kpi:AggregationType ;
+      rdfs:label "holistic" .
+
+kpi:none
+      a       kpi:AggregationType ;
+      rdfs:label "none".
