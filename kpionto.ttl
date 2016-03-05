@@ -94,12 +94,11 @@ kpi:Member
 # Data properties
 ###########################################
 
-as:duration a owl:DatatypeProperty ,
+kpi:duration a owl:DatatypeProperty ,
   owl:FunctionalProperty ;
   rdfs:label "duration"@en ;
   rdfs:comment "The duration of the object"@en ;
   rdfs:range [
-    a owl:Class ;
     owl:unionOf ( xsd:duration xsd:nonNegativeInteger )
   ].
 
