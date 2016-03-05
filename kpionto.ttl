@@ -9,11 +9,7 @@
 kpi:   rdf:type owl:Ontology ;
       dc:created "2016/03/01 12:00:00";
       dc:date "2016/03/01 13:00:00";
-      dc:description """
-        The KPIOnto provides main concepts and properties 
-	for describing (Key) Performance Indicators
-        on the Semantic Web. 
-    """ ;
+      dc:description "The KPIOnto provides main concepts and properties for describing (Key) Performance Indicators on the Semantic Web." ;
       dc:title "KPIOnto" ;
       owl:versionInfo "Revision: 1.0.0" ;
       foaf:maker 
@@ -145,7 +141,7 @@ kpi:hasArgumentName
       rdfs:label "hasArgumentName".
 
 kpi:hasFunction
-      a       owl:DataProperty ;
+      a       owl:DatatypeProperty ;
       rdfs:domain kpi:Formula ;
       rdfs:range xsd:anyURI ;
       rdfs:comment "Indicates the mathematical operator for a formula." ;
