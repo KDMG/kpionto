@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:kpi="http://w3id.org/kpionto/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/rollup">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>Rollup</rdfs:label>
+    <rdfs:comment>Indicates the parthood relation between two levels or two members.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/Level">
+    <rdfs:comment>A level belonging to the hierarchy for a dimension.</rdfs:comment>
+    <rdfs:label>Level</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub25bL57C27">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasBusObj">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <rdfs:label>hasBusObj</rdfs:label>
+    <owl:maxCardinality>1.0</owl:maxCardinality>
+    <owl:minCardinality>1.0</owl:minCardinality>
+    <rdfs:comment>Indicates the business objective for an indicator.</rdfs:comment>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/BusinessObjectives"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/">
+    <dc:creator rdf:nodeID="ub25bL16C9"/>
+    <dc:created>2016/03/01 12:00:00</dc:created>
+    <dc:description>The KPIOnto provides main concepts and properties for describing (Key) Performance Indicators on the Semantic Web.</dc:description>
+    <owl:versionInfo>Revision: 1.0.0</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dc:title>KPIOnto</dc:title>
+    <dc:date>2016/03/01 13:00:00</dc:date>
+    <dc:creator rdf:nodeID="ub25bL15C9"/>
+    <dc:creator rdf:nodeID="ub25bL17C2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/median">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+    <rdfs:label>median</rdfs:label>
+    <kpi:aggrType rdf:resource="http://w3id.org/kpionto/holistic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/BusinessObjectives">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>BusinessObjectives</rdfs:label>
+    <rdfs:comment>A business objective.</rdfs:comment>
+    <rdf:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/distributive">
+    <rdfs:label>distributive</rdfs:label>
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationType"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/avg">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+    <kpi:aggrType rdf:resource="http://w3id.org/kpionto/algebraic"/>
+    <rdfs:label>avg</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/AggregationType">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:comment>The type of an aggregator.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>AggregationType</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasArgumentPosition">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>hasArgumentPosition</rdfs:label>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/FormulaArgument"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdfs:comment>Indicates the position for an argument in a formula.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/max">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <kpi:aggrType rdf:resource="http://w3id.org/kpionto/distributive"/>
+    <rdfs:label>max</rdfs:label>
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasDimension">
+    <rdfs:comment>Indicates a dimension that is compatible for an indicator.</rdfs:comment>
+    <rdfs:label>hasDimension</rdfs:label>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/Dimension"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/FormulaArgument">
+    <rdfs:label>FormulaArgument</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment>An argument for a formula.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/mode">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+    <kpi:aggrType rdf:resource="http://w3id.org/kpionto/holistic"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>mode</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasArgumentValue">
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/FormulaArgument"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/ArgumentValue"/>
+    <rdfs:label>hasArgumentValue</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment>Indicates the value for an argument.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasFunction">
+    <rdfs:label>hasFunction</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:comment>Indicates the mathematical operator for a formula.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Formula"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b4">
+    <rdf:first rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <rdf:rest rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasAggregationFunction">
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <rdfs:label>hasAggregationFunction</rdfs:label>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:comment>Indicates the aggregation function for an indicator.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasFormula">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:comment>Indicates the formula for an indicator.</rdfs:comment>
+    <owl:maxCardinality>1.0</owl:maxCardinality>
+    <rdfs:label>hasFormula</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://w3id.org/kpionto/isFormulaFor"/>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/Formula"/>
+    <owl:minCardinality>1.0</owl:minCardinality>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/inLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Member"/>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/Level"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>inLevel</rdfs:label>
+    <rdfs:comment>Indicates that a member belongs to a level.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/sum">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+    <rdfs:label>sum</rdfs:label>
+    <kpi:aggrType rdf:resource="http://w3id.org/kpionto/distributive"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/AggregationFunction">
+    <rdfs:comment>An aggregation function.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>AggregationFunction</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/aggrType">
+    <rdfs:comment>Indicates the type of an aggregation function.</rdfs:comment>
+    <rdfs:label>aggrType</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#AggregationType"/>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/Constant">
+    <rdfs:comment>A constant, either a non-negative integer or a float.</rdfs:comment>
+    <owl:equivalentClass rdf:nodeID="ub25bL57C27"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>Constant</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b5">
+    <rdf:first rdf:resource="http://w3id.org/kpionto/Formula"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/Member">
+    <rdfs:comment>A member belonging to a level.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>Member</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/Indicator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment>A metric to quantitatively measure a phenomenon.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>Indicator</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/KPIDescription">
+    <rdfs:comment>Describes an indicator.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>KPIDescription</rdfs:label>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/isFormulaFor">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <owl:inverseOf rdf:resource="http://w3id.org/kpionto/hasFormula"/>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>isFormulaFor</rdfs:label>
+    <rdfs:comment>Indicates the indicator which the formula is defined for.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Formula"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/ArgumentValue">
+    <rdfs:comment>The value for an argument, i.e. either a constant, an indicator or a formula.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <owl:equivalentClass rdf:nodeID="ub25bL64C27"/>
+    <rdfs:label>Formula</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b2">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/unitOfMeasure">
+    <rdfs:comment>Indicates the unit of measurement for an indicator.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>unitOfMeasure</rdfs:label>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/min">
+    <rdfs:label>min</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <kpi:aggrType rdf:resource="http://w3id.org/kpionto/distributive"/>
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/Formula">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:comment>A formula for an indicator.</rdfs:comment>
+    <rdfs:label>Formula</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/Dimension">
+    <rdfs:label>Dimension</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:comment>A dimension for the analysis of an indicator.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/acronym">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment>Indicates the acronym for a formula.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>acronym</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/isAdditive">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Formula"/>
+    <rdfs:label>isAdditive</rdfs:label>
+    <rdfs:comment>Indicates whether a formula is additive or not.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasArgumentName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#NCName"/>
+    <rdfs:comment>Indicates the name for a formula argument.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/FormulaArgument"/>
+    <rdfs:label>hasArgumentName</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub25bL17C2">
+    <foaf:name>Claudia Diamantini</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub25bL15C9">
+    <foaf:name>Emanuele Storti</foaf:name>
+    <foaf:homepage rdf:resource="http://www.dii.univpm.it/emanuele.storti"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/holistic">
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>holistic</rdfs:label>
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationType"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/hasArgument">
+    <rdfs:comment>Indicates an argument for a formula.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Formula"/>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/FormulaArgument"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>hasArgument</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b1">
+    <rdf:first rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    <rdf:rest rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b3">
+    <rdf:rest rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b4"/>
+    <rdf:first rdf:resource="http://w3id.org/kpionto/Constant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/inDimension">
+    <rdfs:label>inDimension</rdfs:label>
+    <rdfs:domain rdf:resource="http://w3id.org/kpionto/Level"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment>Indicates that a level belongs to a dimension.</rdfs:comment>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/Dimension"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/algebraic">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationType"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>algebraic</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub25bL16C9">
+    <foaf:name>Domenico Potena</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/count">
+    <rdfs:label>count</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <kpi:aggrType rdf:resource="http://w3id.org/kpionto/distributive"/>
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://w3id.org/kpionto/none">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/AggregationType"/>
+    <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
+    <rdfs:label>none</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub25bL64C27">
+    <owl:unionOf rdf:nodeID="f7d658874ed0e43e58acb26b1407ad171b3"/>
+  </rdf:Description>
+</rdf:RDF>
+

@@ -1,9 +1,11 @@
 # kpionto
 KPIOnto: an ontology to describe (Key) Performance Indicators
 
+Specification: http://kdmg.dii.univpm.it/kpionto
 
 
 * File "kpionto.ttl" includes the N3 serialization of the KPIOnto ontology.
+* File "kpionto.rdf" includes the RDF/XML serialization of the KPIOnto ontology.
 * The "example" folder includes usage examples of the ontology. 
 
 How to cite
