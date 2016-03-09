@@ -11,7 +11,7 @@
 
 #####################################
 
-@prefix biv:	 <http://mywiki/a/>.
+@prefix biv:	 <http://kdmg.dii.univpm.it/kpionto/examples/bivee/>.
 @prefix kpi:	 <http://w3id.org/kpionto/>.
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -2768,7 +2768,8 @@ biv:F_NoH_ProofC
       kpi:isAdditive
               true ;
       kpi:isFormulaFor
-              biv:Hours_ProofC .
+              biv:Hours_ProofC ;
+      kpi:representation "<mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>4</mn><mo>&InvisibleTimes;</mo><mi>x</mi></mrow><mo>+</mo><mn>4</mn></mrow><mo>=</mo><mn>0</mn></mrow>".
 
 biv:TimeSpentOnSearchOfCarriers
       a       kpi:Indicator ;
@@ -7471,6 +7472,7 @@ biv:Hours_ProofC
       rdfs:comment "Number of working hours for the Proof of Concept subwave" ;
       kpi:acronym
               "NoH_ProofC" ;
+      rdfs:comment "Hours_ProofC";
       kpi:hasAggregationFunction
               biv:Sum ;
       kpi:hasBusObj

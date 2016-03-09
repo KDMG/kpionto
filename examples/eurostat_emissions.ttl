@@ -19,10 +19,10 @@
 # Emanuele Storti (Università Politecnica delle Marche) e.storti@univpm.it
 
 #####################################
-@prefix :         <http://example.org/>.
+@prefix :         <http://kdmg.dii.univpm.it/kpionto/examples/eurostat/>.
 @prefix kpi:      <http://w3id.org/kpionto/>.
 @prefix owl:      <http://www.w3.org/2002/07/owl#> .
-@prefix om:       <http://www.openmath.org/cd/>.
+@prefix om:       <http://www.openmath.org/cd/arith1/>.
 @prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
@@ -48,18 +48,18 @@
 :TotalEmissions
         a kpi:Indicator;
         kpi:hasFormula [
-          kpi:hasFunction om:arith1/plus;
+          kpi:hasFunction om:plus;
           kpi:hasArgument
-              [ kpi:hasArgumentPosition "1"xsd:int ;
+              [ kpi:hasArgumentPosition "1"^^xsd:int ;
                 kpi:hasArgumentName "addend" ;
                 kpi:hasArgumentValue :SOXEmission ],
-              [ kpi:hasArgumentPosition "2"xsd:int ;
+              [ kpi:hasArgumentPosition "2"^^xsd:int ;
                 kpi:hasArgumentName "addend" ;
                 kpi:hasArgumentValue :NOXEmission ],
-              [ kpi:hasArgumentPosition "3"xsd:int ;
+              [ kpi:hasArgumentPosition "3"^^xsd:int ;
                 kpi:hasArgumentName "addend" ;
                 kpi:hasArgumentValue :Non-methanVolatileOrgEmission ],
-              [ kpi:hasArgumentPosition "4"xsd:int ;
+              [ kpi:hasArgumentPosition "4"^^xsd:int ;
                 kpi:hasArgumentName "addend" ;
                 kpi:hasArgumentValue :NH3Emission ]
         ].
@@ -67,12 +67,12 @@
 :TotalEmissionsPerCapita
         a kpi:Indicator;
         kpi:hasFormula [
-          kpi:hasFunction om:arith1/divide;
+          kpi:hasFunction om:divide;
           kpi:hasArgument
-              [ kpi:hasArgumentPosition "1"xsd:int ;
+              [ kpi:hasArgumentPosition "1"^^xsd:int ;
                 kpi:hasArgumentName "dividend" ;
                 kpi:hasArgumentValue :TotalEmissions ],
-              [ kpi:hasArgumentPosition "2"xsd:int ;
+              [ kpi:hasArgumentPosition "2"^^xsd:int ;
                 kpi:hasArgumentName "divisor" ;
                 kpi:hasArgumentValue :TotalPopulation ]
         ].

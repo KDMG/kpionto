@@ -2,6 +2,6 @@ examples
 ========
 
 
-The folder includes the following files:
-- "bivee.ttl" describes the usage of KPIOnto for the BIVEE project.
-- "eurostat.ttl" describes how to represent formulas using KPIOnto classes and relations
+The folder includes the following datasets (in ttl and rdf):
+- "bivee" describes the usage of KPIOnto for the BIVEE project.
+- "eurostat" describes how to represent formulas using KPIOnto classes and relations

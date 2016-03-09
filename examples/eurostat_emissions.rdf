@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:kpi="http://w3id.org/kpionto/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:nodeID="ub39bL74C15">
+    <kpi:hasArgumentPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</kpi:hasArgumentPosition>
+    <kpi:hasArgumentValue rdf:resource="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/TotalPopulation"/>
+    <kpi:hasArgumentName>divisor</kpi:hasArgumentName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub39bL55C15">
+    <kpi:hasArgumentPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</kpi:hasArgumentPosition>
+    <kpi:hasArgumentName>addend</kpi:hasArgumentName>
+    <kpi:hasArgumentValue rdf:resource="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/NOXEmission"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/TotalEmissionsPerCapita">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <kpi:hasFormula rdf:nodeID="ub39bL68C24"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub39bL58C15">
+    <kpi:hasArgumentValue rdf:resource="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/Non-methanVolatileOrgEmission"/>
+    <kpi:hasArgumentPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</kpi:hasArgumentPosition>
+    <kpi:hasArgumentName>addend</kpi:hasArgumentName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub39bL52C15">
+    <kpi:hasArgumentName>addend</kpi:hasArgumentName>
+    <kpi:hasArgumentPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</kpi:hasArgumentPosition>
+    <kpi:hasArgumentValue rdf:resource="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/SOXEmission"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/NOxEmission">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub39bL61C15">
+    <kpi:hasArgumentName>addend</kpi:hasArgumentName>
+    <kpi:hasArgumentPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</kpi:hasArgumentPosition>
+    <kpi:hasArgumentValue rdf:resource="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/NH3Emission"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub39bL68C24">
+    <kpi:hasFunction rdf:resource="http://www.openmath.org/cd/arith1/divide"/>
+    <kpi:hasArgument rdf:nodeID="ub39bL71C15"/>
+    <kpi:hasArgument rdf:nodeID="ub39bL74C15"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub39bL71C15">
+    <kpi:hasArgumentPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</kpi:hasArgumentPosition>
+    <kpi:hasArgumentName>dividend</kpi:hasArgumentName>
+    <kpi:hasArgumentValue rdf:resource="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/TotalEmissions"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub39bL49C24">
+    <kpi:hasArgument rdf:nodeID="ub39bL52C15"/>
+    <kpi:hasArgument rdf:nodeID="ub39bL61C15"/>
+    <kpi:hasArgument rdf:nodeID="ub39bL58C15"/>
+    <kpi:hasArgument rdf:nodeID="ub39bL55C15"/>
+    <kpi:hasFunction rdf:resource="http://www.openmath.org/cd/arith1/plus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/TotalEmissions">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/Indicator"/>
+    <kpi:hasFormula rdf:nodeID="ub39bL49C24"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/TotalPopulation">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/SOXEmission">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/NH3Emission">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kdmg.dii.univpm.it/kpionto/examples/eurostat/Non-methanVolatileOrgEmission">
+    <rdf:type rdf:resource="http://w3id.org/kpionto/Indicator"/>
+  </rdf:Description>
+</rdf:RDF>
+
+
