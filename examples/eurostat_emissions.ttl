@@ -36,7 +36,7 @@
 :NOxEmission
         a kpi:Indicator.
 
-:Non-methanVolatileOrgEmission
+:NonMethanVolatileOrgEmission
         a kpi:Indicator.
 
 :NH3Emission
@@ -58,7 +58,7 @@
                 kpi:hasArgumentValue :NOXEmission ],
               [ kpi:hasArgumentPosition "3"^^xsd:int ;
                 kpi:hasArgumentName "addend" ;
-                kpi:hasArgumentValue :Non-methanVolatileOrgEmission ],
+                kpi:hasArgumentValue :NonMethanVolatileOrgEmission ],
               [ kpi:hasArgumentPosition "4"^^xsd:int ;
                 kpi:hasArgumentName "addend" ;
                 kpi:hasArgumentValue :NH3Emission ]
