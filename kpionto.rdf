@@ -170,7 +170,7 @@
     <rdfs:comment>Indicates the type of an aggregation function.</rdfs:comment>
     <rdfs:label>aggrType</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#AggregationType"/>
+    <rdfs:range rdf:resource="http://w3id.org/kpionto/AggregationType"/>
     <rdfs:domain rdf:resource="http://w3id.org/kpionto/AggregationFunction"/>
     <rdfs:isDefinedBy rdf:resource="http://w3id.org/kpionto/"/>
   </rdf:Description>
