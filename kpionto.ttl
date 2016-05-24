@@ -158,7 +158,7 @@ kpi:aggrType
       a       owl:ObjectProperty ;
       rdfs:isDefinedBy kpi: ;
       rdfs:domain kpi:AggregationFunction ;
-      rdfs:range xsd:AggregationType ;
+      rdfs:range kpi:AggregationType ;
       rdfs:comment "Indicates the type of an aggregation function." ;
       rdfs:label "aggrType".
       
