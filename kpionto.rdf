@@ -37,7 +37,7 @@
     <dc:creator rdf:nodeID="ub25bL16C9"/>
     <dc:created>2016/03/01 12:00:00</dc:created>
     <dc:description>The KPIOnto provides main concepts and properties for describing (Key) Performance Indicators on the Semantic Web.</dc:description>
-    <owl:versionInfo>Revision: 1.0.0</owl:versionInfo>
+    <owl:versionInfo>Revision: 2.0.0</owl:versionInfo>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dc:title>KPIOnto</dc:title>
     <dc:date>2016/03/01 13:00:00</dc:date>
